@@ -57,5 +57,3 @@
 - name
 - city_id
 - address
-
-https://ibb.co/4TPp8NC
