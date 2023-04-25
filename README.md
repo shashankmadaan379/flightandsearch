@@ -58,4 +58,6 @@
 - city_id
 - address
 
-https://ibb.co/4TPp8NC
+<img width="448" alt="image" src="https://user-images.githubusercontent.com/99281921/234235911-fdb367f8-ea8b-479d-89fb-41b9506f03bb.png">
+
+
