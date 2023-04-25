@@ -58,4 +58,4 @@
 - city_id
 - address
 
-image.png
+https://ibb.co/4TPp8NC
