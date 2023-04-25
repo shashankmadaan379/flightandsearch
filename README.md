@@ -44,6 +44,7 @@
 - departure
 - arrival
 - flight_number
+- airport_id
 
 # City Table
 
@@ -56,3 +57,5 @@
 - name
 - city_id
 - address
+
+image.png
