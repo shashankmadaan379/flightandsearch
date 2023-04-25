@@ -32,18 +32,18 @@
 # Airplane Table
 
 - id
-- Model_Number
-- Capacity
-- created_at -> when u created an entity
-- updated_at
+- model_number
+- capacity
 
 # Flights Table
 
 - id
-- source_airport_id
-- destination_airport_id
+- departure_city_id
+- destination_city_id
+- airplane
 - departure
 - arrival
+- flight_number
 
 # City Table
 
