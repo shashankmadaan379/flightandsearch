@@ -42,10 +42,8 @@
 - id
 - source_airport_id
 - destination_airport_id
-- departure_date
-- arrival_date
-- departure_time
-- arrival time
+- departure
+- arrival
 
 # City Table
 
