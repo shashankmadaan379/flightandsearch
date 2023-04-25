@@ -21,3 +21,40 @@
 
 - Once you've added ur Db config as listed above, go to the src folder from your terminal and execute
   "npx sequelize db:create"
+
+#DB Design
+
+- Airplane Table
+- Flight Table
+- Airport Table
+- City Table
+
+# Airplane Table
+
+- id
+- Model_Number
+- Capacity
+- created_at -> when u created an entity
+- updated_at
+
+# Flights Table
+
+- id
+- source_airport_id
+- destination_airport_id
+- departure_date
+- arrival_date
+- departure_time
+- arrival time
+
+# City Table
+
+- id
+- name
+
+# Airport Table
+
+- id
+- name
+- city_id
+- address
