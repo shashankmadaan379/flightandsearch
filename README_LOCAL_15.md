@@ -63,7 +63,4 @@
 <img width="448" alt="image" src="https://user-images.githubusercontent.com/99281921/234235911-fdb367f8-ea8b-479d-89fb-41b9506f03bb.png">
 
 
-<<<<<<< HEAD
 >>>>>>> 5ac1e12 (dm image readme)
-=======
->>>>>>> 5ac1e12ca89a13f33740c74f4e88ae550523a4a5
