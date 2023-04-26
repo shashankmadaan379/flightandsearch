@@ -40,14 +40,32 @@ const destroy = async (req, res) => {
     });
   }
 };
-const update = (req, res) => {};
+const update = async (req, res) => {
+  try {
+    const city = await cityService.updateCity(req.params.id, req.body);
+    return res.status(201).json({
+      data: city,
+      success: true,
+      message: "Succesfully updated city !",
+      arr: {},
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Not able to update the city",
+      err: error,
+    });
+  }
+};
 const get = async (req, res) => {
   try {
     const city = await cityService.getCity(req.params.id);
     return res.status(201).json({
       data: city,
       success: true,
-      message: "Succesfully get the city !",
+      message: "Succesfully fetched a city !",
       arr: {},
     });
   } catch (error) {
