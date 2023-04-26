@@ -21,6 +21,7 @@ const create = async (req, res) => {
   }
 };
 
+// DELETE --> /city/:id
 const destroy = async (req, res) => {
   try {
     const response = await cityService.deleteCity(req.params.id);
@@ -40,6 +41,8 @@ const destroy = async (req, res) => {
     });
   }
 };
+
+//PATCH ---> /city/:id --> req.body
 const update = async (req, res) => {
   try {
     const city = await cityService.updateCity(req.params.id, req.body);
@@ -59,6 +62,8 @@ const update = async (req, res) => {
     });
   }
 };
+
+//GET --> /city/:id
 const get = async (req, res) => {
   try {
     const city = await cityService.getCity(req.params.id);
