@@ -1,9 +1,9 @@
 const { CityService } = require("../services/index");
 
-const CityService = new CityService();
+const cityService = new CityService();
 const create = (req, res) => {
   try {
-    const city = CityService.createCity(req.body);
+    const city = cityService.createCity(req.body);
     return res.status(201).json({
       data: city,
       success: true,
