@@ -41,14 +41,14 @@ const setUpAndStartServer = async () => {
       db.sequelize.sync({ alter: true });
     }
 
-    const city = await City.findOne({
-      where: {
-        id: 3,
-      },
-    });
+    // const city = await City.findOne({
+    //   where: {
+    //     id: 3,
+    //   },
+    // });
 
-    const airports = await city.getAirports();
-    console.log(city, airports);
+    // const airports = await city.getAirports();
+    // console.log(city, airports);
   });
 };
 setUpAndStartServer();
