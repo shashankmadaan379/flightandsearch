@@ -66,3 +66,13 @@
   command to generate airport model -
     npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:Integer
 ```
+
+```
+  command to create seeder file
+  npx sequelize seed:generate --name add-airports
+```
+
+```
+executing seed file or seeding all the data into the database
+ npx sequelize db:seed:all
+```
