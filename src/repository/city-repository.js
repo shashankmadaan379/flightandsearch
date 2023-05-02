@@ -79,6 +79,19 @@ class CityRepository {
       throw error;
     }
   }
+
+  async createMultipleCities(cities) {
+    try {
+      const response = cities.map((city) => ({
+        name: city.name,
+      }));
+      await City.bulkCreate(response);
+      return "Succesfully created cities";
+    } catch (error) {
+      console.log("Something went wrong in repository layer");
+      throw error;
+    }
+  }
 }
 
 module.exports = CityRepository;
