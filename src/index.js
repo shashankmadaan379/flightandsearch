@@ -4,7 +4,9 @@ const { PORT } = require("./config/serverConfig");
 // const { City } = require("./models/index");
 // const CityRepository = require("./repository/city-repository");
 
-// const { Airport, City } = require("./models/index");
+const { Airport, City } = require("./models/index");
+
+const db = require("./models/index");
 
 const ApiRoutes = require("./routes/index");
 const setUpAndStartServer = async () => {
@@ -27,10 +29,26 @@ const setUpAndStartServer = async () => {
     //   name: "New Delhi",
     // });
 
-    // const airport = await Airport.findAll({
-    //   include: City,
-    // });
-    // console.log(airport);
+    // await City.findByPk(3)
+    //   .then((city) => {
+    //     return city.getAirports();
+    //   })
+    //   .then((airports) => {
+    //     console.log(airports);
+    //   });
+
+    if (process.env.SYNC_DB) {
+      db.sequelize.sync({ alter: true });
+    }
+
+    const city = await City.findOne({
+      where: {
+        id: 3,
+      },
+    });
+
+    const airports = await city.getAirports();
+    console.log(city, airports);
   });
 };
 setUpAndStartServer();
