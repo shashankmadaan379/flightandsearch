@@ -1,6 +1,4 @@
-const e = require("express");
 const { City } = require("../models/index");
-const city = require("../models/city");
 const { Op } = require("sequelize");
 
 class CityRepository {
