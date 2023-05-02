@@ -4,6 +4,8 @@ const { PORT } = require("./config/serverConfig");
 // const { City } = require("./models/index");
 // const CityRepository = require("./repository/city-repository");
 
+// const { Airport, City } = require("./models/index");
+
 const ApiRoutes = require("./routes/index");
 const setUpAndStartServer = async () => {
   const app = express();
@@ -24,6 +26,11 @@ const setUpAndStartServer = async () => {
     // await City.create({
     //   name: "New Delhi",
     // });
+
+    // const airport = await Airport.findAll({
+    //   include: City,
+    // });
+    // console.log(airport);
   });
 };
 setUpAndStartServer();
