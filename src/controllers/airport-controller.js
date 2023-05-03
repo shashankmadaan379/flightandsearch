@@ -64,8 +64,29 @@ const update = async (req, res) => {
   }
 };
 
+const get = async (req, res) => {
+  try {
+    const airport = await airportService.getAirport(req.params.id);
+    return res.status(201).json({
+      data: airport,
+      success: true,
+      message: "Succesfully fetched an airport !",
+      arr: {},
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Not able to fetch the airport",
+      err: error,
+    });
+  }
+};
+
 module.exports = {
   create,
   destory,
   update,
+  get,
 };
