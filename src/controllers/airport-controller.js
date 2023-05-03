@@ -1,4 +1,3 @@
-const { param } = require("../routes");
 const { AirportService } = require("../services/index");
 
 const airportService = new AirportService();
