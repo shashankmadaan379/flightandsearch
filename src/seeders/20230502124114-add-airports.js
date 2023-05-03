@@ -12,31 +12,30 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-
-    await queryInterface.bulkInsert(
-      "Airports",
-      [
-        {
-          name: "Chhatrapati Shivaji Maharaj International Airport",
-          cityId: 3,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Kempegowda International Airport",
-          cityId: 8,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Rajiv Gandhi International Airport",
-          cityId: 9,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-      {}
-    );
+    // await queryInterface.bulkInsert(
+    //   "Airports",
+    //   [
+    //     {
+    //       name: "Chhatrapati Shivaji Maharaj International Airport",
+    //       cityId: 3,
+    //       createdAt: new Date(),
+    //       updatedAt: new Date(),
+    //     },
+    //     {
+    //       name: "Kempegowda International Airport",
+    //       cityId: 8,
+    //       createdAt: new Date(),
+    //       updatedAt: new Date(),
+    //     },
+    //     {
+    //       name: "Rajiv Gandhi International Airport",
+    //       cityId: 9,
+    //       createdAt: new Date(),
+    //       updatedAt: new Date(),
+    //     },
+    //   ],
+    //   {}
+    // );
   },
 
   async down(queryInterface, Sequelize) {
