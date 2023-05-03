@@ -1,6 +1,6 @@
 const express = require("express");
 const CityController = require("../../controllers/city-controller");
-
+const AirportController = require("../../controllers/airport-controller");
 const router = express.Router();
 
 router.post("/city", CityController.create);
@@ -10,4 +10,6 @@ router.patch("/city/:id", CityController.update);
 router.get("/city", CityController.getAll);
 
 router.post("/cities", CityController.createMutlipleCities);
+
+router.post("/airport", AirportController.create);
 module.exports = router;
