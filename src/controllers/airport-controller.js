@@ -1,3 +1,4 @@
+const { param } = require("../routes");
 const { AirportService } = require("../services/index");
 
 const airportService = new AirportService();
@@ -43,7 +44,28 @@ const destory = async (req, res) => {
   }
 };
 
+const update = async (req, res) => {
+  try {
+    const airport = await airportService.updateAirport(req.params.id, req.body);
+    return res.status(201).json({
+      data: airport,
+      success: true,
+      message: "Succesfully updated airport !",
+      arr: {},
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Not able to update the airport",
+      err: error,
+    });
+  }
+};
+
 module.exports = {
   create,
   destory,
+  update,
 };

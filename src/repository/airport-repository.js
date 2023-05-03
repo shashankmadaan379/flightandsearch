@@ -25,6 +25,17 @@ class AirportRepository {
       throw error;
     }
   }
+
+  async updateAirport(airportId, data) {
+    try {
+      const airport = await Airport.findByPk(airportId);
+      airport.name = data.name;
+      airport.save();
+      return airport;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 module.exports = AirportRepository;
