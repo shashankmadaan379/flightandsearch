@@ -16,6 +16,16 @@ class AirplaneService {
       throw error;
     }
   }
+
+  async deleteAirplane(airplaneId) {
+    try {
+      const response = await this.AirplaneRepository.deleteAirplane(airplaneId);
+      return response;
+    } catch (error) {
+      console.log("Something went wrong at the service layer");
+      throw error;
+    }
+  }
 }
 
 module.exports = AirplaneService;

@@ -20,6 +20,7 @@ class AirportRepository {
           id: airportId,
         },
       });
+      return true;
     } catch (error) {
       console.log("Something went wrong in repository layer");
       throw error;

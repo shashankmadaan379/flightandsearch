@@ -13,5 +13,19 @@ class AirplaneRepository {
       throw error;
     }
   }
+
+  async deleteAirplane(airplaneId) {
+    try {
+      await Airplane.destroy({
+        where: {
+          id: airplaneId,
+        },
+      });
+      return true;
+    } catch (error) {
+      console.log("Something went wrong in repository layer");
+      throw error;
+    }
+  }
 }
 module.exports = AirplaneRepository;
