@@ -3,8 +3,8 @@ class AirportRepository {
   async createAirport(name, cityId) {
     try {
       const airport = await Airport.create({
-        name: name,
-        cityId: cityId,
+        name,
+        cityId,
       });
       return airport;
     } catch (error) {
@@ -12,5 +12,19 @@ class AirportRepository {
       throw error;
     }
   }
+
+  async deleteAirport(airportId) {
+    try {
+      await Airport.destroy({
+        where: {
+          id: airportId,
+        },
+      });
+    } catch (error) {
+      console.log("Something went wrong in repository layer");
+      throw error;
+    }
+  }
 }
+
 module.exports = AirportRepository;
