@@ -67,8 +67,28 @@ const update = async (req, res) => {
   }
 };
 
+const get = async (req, res) => {
+  try {
+    const airplane = await airplaneService.getAirplane(req.params.id);
+    return res.status(201).json({
+      data: airplane,
+      success: true,
+      message: "Succesfully fetched an airplane !",
+      arr: {},
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Not able to fetch the airplane",
+      err: error,
+    });
+  }
+};
 module.exports = {
   create,
   destroy,
   update,
+  get,
 };
