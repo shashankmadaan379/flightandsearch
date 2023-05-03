@@ -27,5 +27,18 @@ class AirplaneRepository {
       throw error;
     }
   }
+
+  async updateAirplane(airplaneId, data) {
+    try {
+      const airplane = await Airplane.findByPk(airplaneId);
+      airplane.modelNumber = data.modelNumber;
+      airplane.capacity = data.capacity;
+      airplane.save();
+      return airplane;
+    } catch (error) {
+      console.log("Something went wrong in repository layer");
+      throw error;
+    }
+  }
 }
 module.exports = AirplaneRepository;
