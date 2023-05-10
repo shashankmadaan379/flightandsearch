@@ -39,9 +39,11 @@ module.exports = {
       },
       arrivalTime: {
         type: Sequelize.DATE,
+        allowNull: false,
       },
       departureTime: {
         type: Sequelize.DATE,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       price: { type: DataTypes.INTEGER, allowNull: false },
       boardingGate: DataTypes.STRING,
       totalSeats: { type: DataTypes.INTEGER, allowNull: false },
-      arrivalTime: DataTypes.DATE,
-      departureTime: DataTypes.DATE,
+      arrivalTime: { type: DataTypes.DATE, allowNull: false },
+      departureTime: { type: DataTypes.DATE, allowNull: false },
     },
     {
       sequelize,
