@@ -41,7 +41,6 @@ class CityRepository {
       city.name = data.name;
       city.save();
       return city;
-      return city;
     } catch (error) {
       console.log(error);
     }
