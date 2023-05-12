@@ -4,6 +4,7 @@ class FlightRepository {
   //private fucntion
   #createFilter(data) {
     let filter = {};
+    // let filter={...data}
     if (data.arrivalAirportId) {
       filter.arrivalAirportId = data.arrivalAirportId;
     }
@@ -30,6 +31,19 @@ class FlightRepository {
     try {
       const flight = await Flights.create(data);
       return flight;
+    } catch (error) {
+      console.log("Something went wrong in repository layer");
+      throw error;
+    }
+  }
+  async deleteFlight(flightId) {
+    try {
+      await Flights.destroy({
+        where: {
+          id: flightId,
+        },
+      });
+      return true;
     } catch (error) {
       console.log("Something went wrong in repository layer");
       throw error;
