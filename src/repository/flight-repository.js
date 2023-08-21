@@ -52,10 +52,12 @@ class FlightRepository {
 
   async updateFlight(flightId, data) {
     try {
-      const flight = await Flights.findByPk(flightId);
-      flight.flightNumber = data.flightNumber;
-      flight.save();
-      return flight;
+      await Flights.update(data, {
+        where: {
+          id: flightId,
+        },
+      });
+      return true;
     } catch (error) {
       console.log("Something went wrong in repository layer");
       throw error;
